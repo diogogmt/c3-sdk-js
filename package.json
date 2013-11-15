@@ -1,0 +1,29 @@
+{
+    "name": "node-openstack",
+    "version": "0.2.1",
+    "author": "Diogo Monteiro <diogo.gmt@gmail.com>",
+    "repository": {
+      "type": "git",
+      "url": "http://gitlabs.clouddynamicsinc/node-openstack.git"
+    },
+    "description": "An API wrapper for OpenStack.",
+    "contributors": [{
+        "name": "Diogo Monteiro",
+        "email": "diogo.gmt@gmail.com"
+      }
+    ],
+    "keywords": [
+      "openstack",
+      "api",
+      "cloud"
+    ],
+    "dependencies": {
+      "crypto": "0.0.3",
+      "request": "2.9.203"
+    },
+    "license": "MIT",
+    "main": "./lib/openstack",
+    "engines": {
+      "node": ">= 0.4.0"
+    }
+}
