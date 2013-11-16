@@ -1,28 +1,29 @@
 {
     "name": "node-openstack",
-    "version": "0.2.1",
+    "version": "0.0.1",
     "author": "Diogo Monteiro <diogo.gmt@gmail.com>",
     "repository": {
       "type": "git",
-      "url": "http://gitlabs.clouddynamicsinc/node-openstack.git"
+      "url": ""
     },
-    "description": "An API wrapper for OpenStack.",
+    "description": "An API wrapper for C3.",
     "contributors": [{
         "name": "Diogo Monteiro",
         "email": "diogo.gmt@gmail.com"
       }
     ],
     "keywords": [
-      "openstack",
-      "api",
-      "cloud"
+      "c3"
     ],
     "dependencies": {
       "crypto": "0.0.3",
-      "request": "2.9.203"
+      "request": "2.9.203",
+      "underscore": "1.5.2",
+      "async": "0.1.22",
+      "prettyjson": "0.9.0"
     },
     "license": "MIT",
-    "main": "./lib/openstack",
+    "main": "./lib/c3",
     "engines": {
       "node": ">= 0.4.0"
     }
