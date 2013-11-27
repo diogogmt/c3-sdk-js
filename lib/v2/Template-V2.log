@@ -1,0 +1,148 @@
+Template
+
+createFromServer
+request
+http://localhost:8000/api/v2/cdos/templates
+{ siteId: 2,
+  name: 'V2TemplateTest2761',
+  serverId: '569dd1cb-35e1-4c8f-bb9c-fb997a722b73',
+  volumeId: 'bc0f52a5-6765-4d1f-9cc1-ae91df943c5d' }
+
+response
+"template": {
+    "jobId": "8f5427c7-d628-43b6-bb7a-daf67d75e7f9",
+    "id": "3874197c-4e8b-48b6-be5b-f3c240e700f3",
+    "resourceId": "3bd36bb2-823a-4cfb-94f8-3ef9fc01ef37",
+    "name": "V2TemplateTest2761",
+    "resourceState": "Creating",
+    "siteId": 2,
+    "siteName": "Vulcan42",
+    "accountId": 2,
+    "accountName": "10169832",
+    "osTypeId": "1bd31b50-35d1-11e3-a6fd-3a96760eadba",
+    "state": "CREATING",
+    "volumeId": "bc0f52a5-6765-4d1f-9cc1-ae91df943c5d",
+    "serverId": "569dd1cb-35e1-4c8f-bb9c-fb997a722b73",
+  }
+
+
+
+update
+request
+http://localhost:8000/api/v2/cdos/templates/09b1772f-f840-4373-a4f9-bb7a6411beda
+{ name: 'V2TemplateTest2671',
+  featured: false,
+  publicAccess: false }
+
+response
+"template": {
+    "id": "09b1772f-f840-4373-a4f9-bb7a6411beda",
+    "name": "V2TemplateTest2671",
+    "siteId": 2,
+    "publicAccess": false,
+    "featured": false
+  }
+
+destroy
+request
+http://localhost:8000/api/v2/cdos/templates/3874197c-4e8b-48b6-be5b-f3c240e700f3
+
+response
+"template": {
+    "jobId": "b533fc30-b0c5-48a9-813d-657afa74fc2e",
+    "id": "3874197c-4e8b-48b6-be5b-f3c240e700f3"
+  }
+
+
+calculateCru
+request
+http://localhost:8000/api/v2/cdos/templates/calculate/cru
+{ siteId: 2, size: 20 }
+
+response
+"template": {
+    "cruAmount": 0.06364160217344761,
+    "cruCost": 0.06364160217344761,
+    "requestedUnits": 20
+  }
+
+
+details
+request
+http://localhost:8000/api/v2/cdos/templates/1bb179b4-35d1-11e3-a6fd-3a96760eadba?siteId=2&type=featured
+
+response
+"template": {
+    "id": "1bb179b4-35d1-11e3-a6fd-3a96760eadba",
+    "name": "CentOS 5.6(64-bit) no GUI (XenServer)",
+    "siteId": 2,
+    "cru": 0.06364160217344761,
+    "createdTime": "2013-11-11T14:49:05-0500",
+    "hypervisor": "XenServer",
+    "osTypeId": "1bd31b50-35d1-11e3-a6fd-3a96760eadba",
+    "osTypeName": "CentOS 5.3 (64-bit)",
+    "format": "VHD",
+    "state": "Download Complete",
+    "size": 20,
+    "publicAccess": true,
+    "featured": true,
+    "extractable": true,
+    "passwordEnabled": false,
+    "type": "featured",
+    "bootable": false,
+    "ready": true
+  }
+
+
+
+list
+request
+http://localhost:8000/api/v2/cdos/templates?siteIds=2&type=featured
+
+response
+"templates": [
+    {
+      "id": "0132cf79-c281-44f5-856f-4f981327d69d",
+      "name": "CentOS 6.4 (64-bit) no GUI - 40GB",
+      "siteId": 2,
+      "siteName": "Vulcan42",
+      "cru": 0.12728320434689522,
+      "createdTime": "2013-11-13T15:41:50-0500",
+      "hypervisor": "XenServer",
+      "osTypeId": "1cb65da2-35d1-11e3-a6fd-3a96760eadba",
+      "osTypeName": "CentOS 6.4 (64-bit)",
+      "format": "VHD",
+      "state": "Download Complete",
+      "size": 40,
+      "publicAccess": true,
+      "featured": true,
+      "extractable": true,
+      "passwordEnabled": false,
+      "type": "featured",
+      "bootable": false,
+      "ready": true
+    },
+    {
+      "id": "2be8ee7b-edaf-455c-a2f2-cbf41d9d055b",
+      "name": "Windows Server 2008 R2 - Data 40GB",
+      "siteId": 2,
+      "siteName": "Vulcan42",
+      "cru": 0.12728320434689522,
+      "createdTime": "2013-11-13T12:55:00-0500",
+      "hypervisor": "XenServer",
+      "osTypeId": "1c169b32-35d1-11e3-a6fd-3a96760eadba",
+      "osTypeName": "Windows Server 2008 R2 (64-bit)",
+      "format": "VHD",
+      "state": "Download Complete",
+      "size": 40,
+      "publicAccess": true,
+      "featured": true,
+      "extractable": true,
+      "passwordEnabled": false,
+      "type": "featured",
+      "bootable": false,
+      "ready": true
+    }]
+
+
+
