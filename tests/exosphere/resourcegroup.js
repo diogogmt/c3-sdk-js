@@ -19,7 +19,7 @@ describe('resourceGroup', function () {
   var newname = 'Kam newd Group';
 
 
-  it('resourcegroup.create', function (done) {
+  it('resourcegroup.creategroup', function (done) {
     var data = {
       siteId: siteid,
       computeResourceId: computeOfferingId,
@@ -34,7 +34,7 @@ describe('resourceGroup', function () {
      });
   });
 
-  it('resourcegroup.update', function (done) {
+  it('resourcegroup.updategroup', function (done) {
     var data = {
       id: id,
       computeResourceId: computeOfferingId,
@@ -60,7 +60,7 @@ describe('resourceGroup', function () {
    });
   });
 
-  it('resourcegroup.delete', function (done) {
+  it('resourcegroup.deletegroup', function (done) {
     var data = {
       id: id,
     };
