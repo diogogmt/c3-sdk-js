@@ -7,7 +7,7 @@ describe('server.cloudstack', function () {
 
   this.timeout(1500000);
 
-  var id = '569dd1cb-35e1-4c8f-bb9c-fb997a722b73';
+  var id = '7688dc3d-2945-4c21-8c0e-a9f27123499c';
   var name = 'ServerTestAPIV2';
 
   var templateId = '1bb179b4-35d1-11e3-a6fd-3a96760eadba'; // cento
@@ -27,6 +27,8 @@ describe('server.cloudstack', function () {
   var templateTypeIso = 'ISO';
   var templateTypeFeatured = 'featured'
 
+  var start = false;
+
   it('server.cs.create', function (done) {
     var cmd = 'serverCreate';
     var data = {
@@ -37,6 +39,7 @@ describe('server.cloudstack', function () {
       templateId: templateId,
       templateType: templateTypeFeatured,
       securityZoneId: securityZoneId,
+      start: start,
       // diskOfferingId: diskOfferingId,
     }
     c3Sdk.createServer(data, function (err, result) {
