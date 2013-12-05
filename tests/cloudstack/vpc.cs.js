@@ -10,11 +10,15 @@ describe('vpc.cloudstack', function () {
   var name = 'APIV2VpcTest';
   var renamed = 'APIV2VpcTestRenamed';
 
+  var cidr = '10.9.9.0';
+  var cidrPrefix = '22';
+
   it('vpc.cs.create', function (done) {
     var data = {
       siteId: 2,
       name: name + Math.floor((Math.random()*1000))+1,
-      cidr: '10.100.0.0/22',
+      cidr: cidr,
+      cidrPrefix: cidrPrefix,
     };
     c3Sdk.createVpc(data, function (err, result) {
       console.log('err: ', err);
