@@ -10,8 +10,8 @@ describe('vpc.cloudstack', function () {
   var name = 'APIV2VpcTest';
   var renamed = 'APIV2VpcTestRenamed';
 
-  var cidr = '10.9.9.0';
-  var cidrPrefix = '22';
+  var cidr = '10.15.9.0';
+  var cidrPrefix = '23';
 
   it('vpc.cs.create', function (done) {
     var data = {

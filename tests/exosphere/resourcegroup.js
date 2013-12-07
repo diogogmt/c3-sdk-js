@@ -7,15 +7,14 @@ describe('resourceGroup', function () {
 
   this.timeout(1500000);
 
-  var id = 5;
+  var id = 11;
   var siteid = 1;
-  var accountid = 4;
 
-  var computeOfferingId = "f89abdd8-57b7-11e3-b070-be159b62ffc0";  // small instance
-  var templateOfferingId = "f899b514-57b7-11e3-b070-be159b62ffc0"; // template CentOS 6.1  
-  var securityOfferingId = "f3d20dbe-052d-407b-a69c-c02b07382e5e"; // patel security zone
+  var computeOfferingId = "f49b8b5a-5e91-11e3-8a8b-5dc9d7d8b812";  // small instance
+  var templateOfferingId = "f49b6080-5e91-11e3-8a8b-5dc9d7d8b812"; // template CentOS 6.1  
+  var securityOfferingId = "6a748896-6d0f-4e17-ac63-0cd9877257ef"; // patel security zone
 
-  var name = 'Kam what Group';
+  var name = 'TestGroup';
   var newname = 'Kam newd Group';
 
 
@@ -25,7 +24,7 @@ describe('resourceGroup', function () {
       computeResourceId: computeOfferingId,
       templateResourceId: templateOfferingId,
       securityResourceId: securityOfferingId,
-      name: name,
+      name: name + Math.floor((Math.random()*1000))+1,
     }
     c3Sdk.createGroup(data, function (err, result) {
     console.log('err: ', err);
@@ -92,6 +91,28 @@ describe('resourceGroup', function () {
    log.json(result);
    done();
    });
+  });
+
+  it('resourcegroup.start', function (done) {
+    var data = {
+      id: id,
+    };
+    c3Sdk.startServerGroup(data, function (err, result) {
+      console.log('err: ', err);
+      log.json(result);
+      done();
+    });
+  }); 
+
+  it('resourcegroup.stop', function (done) {
+    var data = {
+      id: id,
+    };
+    c3Sdk.stopServerGroup(data, function (err, result) {
+      console.log('err: ', err);
+      log.json(result);
+      done();
+    });
   });  
 
 

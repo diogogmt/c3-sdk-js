@@ -77,7 +77,7 @@ describe('securityZone.cloudstack', function () {
   it('securityZone.cs.list', function (done) {
     var cmd = 'securityZoneList';
     var data = {
-      siteIds: '2',
+      siteIds: '1',
       // supportedServices: supportedServices
     };
     c3Sdk.listSecurityZones(data, function (err, result) {

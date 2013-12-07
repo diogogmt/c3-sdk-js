@@ -7,7 +7,7 @@ describe('template.cloudstack', function () {
   this.timeout(1500000);
 
   // var id = '1bb179b4-35d1-11e3-a6fd-3a96760eadba'; // cento no gui
-  var id = '09b1772f-f840-4373-a4f9-bb7a6411beda'; // custom
+  var id = 'a6fa6cf0-ef99-4cad-8ee2-f4869c0fdb2c'; // custom
 
   var serverId = '569dd1cb-35e1-4c8f-bb9c-fb997a722b73';
   var volumeId = 'bc0f52a5-6765-4d1f-9cc1-ae91df943c5d';
@@ -81,7 +81,7 @@ describe('template.cloudstack', function () {
     var data = {
       siteId: 2,
       id: id,
-      type: 'featured',
+      type: 'self',
     };
     c3Sdk.templateDetails(data, function (err, result) {
       console.log('err: ', err);
@@ -108,7 +108,7 @@ describe('template.cloudstack', function () {
     var data = {
       // id: id,
       siteId: 2,
-      // type: 'featured',
+      type: 'self',
       size: 20,
       // snapshotId: snapshotId,
       // volumeId: volumeId,
