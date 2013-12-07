@@ -47,6 +47,18 @@ describe('resourceGroup', function () {
    done();
    });
   });
+
+
+  it('resourcegroup.deletegroup', function (done) {
+    var data = {
+      id: id,
+    };
+   c3Sdk.deleteGroup(data, function (err, result) {
+   console.log('err: ', err);
+   log.json(result);
+   done();
+   });
+  });
  
    it('resourcegroup.details', function (done) {
     var data = {
@@ -59,16 +71,16 @@ describe('resourceGroup', function () {
    });
   });
 
-  it('resourcegroup.deletegroup', function (done) {
+   it('resourcegroup.listGroups', function (done) {
     var data = {
-      id: id,
     };
-   c3Sdk.deleteGroup(data, function (err, result) {
-   console.log('err: ', err);
-   log.json(result);
-   done();
-   });
+    c3Sdk.listGroups(data, function (err, result) {
+      console.log('err: ', err);
+      log.json(result);
+      done();
+    });
   });
+
 
   it('resourcegroup.createserver', function (done) {
     var data = {

@@ -7,7 +7,7 @@ describe('server.cloudstack', function () {
 
   this.timeout(1500000);
 
-  var id = '7688dc3d-2945-4c21-8c0e-a9f27123499c';
+  var id = '66747fbb-e48b-437c-923f-b8e919a6737f';
   var name = 'ServerTestAPIV2';
 
   var templateId = '1bb179b4-35d1-11e3-a6fd-3a96760eadba'; // cento
