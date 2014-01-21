@@ -34,6 +34,18 @@ describe('iso.cloudstack', function () {
     });
   });
 
+  it('iso.cs.details', function (done) {
+    var data = {
+      id: id,
+      siteId: 2,
+    };
+    c3Sdk.isoDetails(data, function (err, result) {
+      console.log('err: ', err);
+      console.log('result: ', result);
+      done();
+    });
+  });
+
   it('iso.cs.list', function (done) {
     var cmd = 'isoList';
     var data = {

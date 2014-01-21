@@ -7,12 +7,12 @@ describe('resourceGroup', function () {
 
   this.timeout(1500000);
 
-  var id = 11;
+  var id = 12;
   var siteid = 1;
 
   var computeOfferingId = "f49b8b5a-5e91-11e3-8a8b-5dc9d7d8b812";  // small instance
   var templateOfferingId = "f49b6080-5e91-11e3-8a8b-5dc9d7d8b812"; // template CentOS 6.1  
-  var securityOfferingId = "6a748896-6d0f-4e17-ac63-0cd9877257ef"; // patel security zone
+  var securityOfferingId = "f0b8b94e-19a0-4f46-97c5-43e3a7d79a3f"; // patel security zone
 
   var name = 'TestGroup';
   var newname = 'Kam newd Group';

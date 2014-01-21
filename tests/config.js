@@ -2,12 +2,12 @@ var C3Sdk = require('../lib/c3');
 var request = require('request');
 
 
-var url = 'http://c3.host'; // host/ip for c3 server
-var port = 80; 
+var url = 'http://127.0.0.1'; // host/ip for c3 server
+var port = 8000; 
 var path = '/api/v2/cdos' // API resource path
 var endPoint = url + ':' + port + path;
 
-var username = 'devcloud';
+var username = 'testdev';
 var password = 'password';
 var userId = 11 // User to impersonate, defaults to authenticated user
 // Use existing tokenID
