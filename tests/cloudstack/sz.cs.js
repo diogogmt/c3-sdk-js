@@ -23,7 +23,7 @@ var assert = require('assert'),
         it('securityZone.cs.create', function(done) {
             var cmd = 'securityZoneCreate';
             var data = {
-                siteId: 2,
+                siteId: 1,
                 name: name + Math.floor((Math.random() * 1000)) + 1,
                 desc: desc + Math.floor((Math.random() * 1000)) + 1,
                 gateway: gateway,
