@@ -11,8 +11,8 @@ describe('resourceGroup', function () {
   var siteid = 1;
 
   var computeOfferingId = "f49b8b5a-5e91-11e3-8a8b-5dc9d7d8b812";  // small instance
-  var templateOfferingId = "f49b6080-5e91-11e3-8a8b-5dc9d7d8b812"; // template CentOS 6.1  
-  var securityOfferingId = "f0b8b94e-19a0-4f46-97c5-43e3a7d79a3f"; // patel security zone
+  var templateOfferingId = "eb0902d5-e1dd-4540-9468-230a0c44c589"; // bidderbase
+  var securityOfferingId = "239b4055-b155-4c9c-aa4f-fd8447d73fdf"; // patel security zone
 
   var name = 'TestGroup';
   var newname = 'Kam newd Group';
