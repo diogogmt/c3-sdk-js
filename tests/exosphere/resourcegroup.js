@@ -7,23 +7,36 @@ describe('resourceGroup', function () {
 
   this.timeout(1500000);
 
-  var id = 12;
+  var id = 8;
   var siteid = 1;
 
-  var computeOfferingId = "f49b8b5a-5e91-11e3-8a8b-5dc9d7d8b812";  // small instance
-  var templateOfferingId = "eb0902d5-e1dd-4540-9468-230a0c44c589"; // bidderbase
-  var securityOfferingId = "239b4055-b155-4c9c-aa4f-fd8447d73fdf"; // patel security zone
+  var compute = {
+    local: '8b28069c-8837-11e3-a056-b6836e9fd345',
+    dev: '6f0bc672-883e-11e3-9605-be159b62ffc0'
+  }
+  
+  var template = {
+    local: 'eca1bda8-84a1-11e3-9077-7d8d4fe07abf',
+    dev: 'eb0902d5-e1dd-4540-9468-230a0c44c589'
+  }
+  
+  var securityZone = {
+    local: '10816edb-8fdb-4951-900c-5ddc57a4ead9',
+    dev: 'a91e23fe-da74-4a35-8fe3-93bfaaef95f0'
+  }
+  var templateOfferingId = ""; // bidderbase
+  var securityOfferingId = ""; // patel security zone
 
-  var name = 'TestGroup';
+  var name = 'bidder';
   var newname = 'Kam newd Group';
 
 
-  it('resourcegroup.creategroup', function (done) {
+  it('resourcegroup.createGroup', function (done) {
     var data = {
       siteId: siteid,
-      computeResourceId: computeOfferingId,
-      templateResourceId: templateOfferingId,
-      securityResourceId: securityOfferingId,
+      computeResourceId: compute['dev'],
+      templateResourceId: template['dev'],
+      securityResourceId: securityZone['dev'],
       name: name + Math.floor((Math.random()*1000))+1,
     }
     c3Sdk.createGroup(data, function (err, result) {
@@ -33,12 +46,12 @@ describe('resourceGroup', function () {
      });
   });
 
-  it('resourcegroup.updategroup', function (done) {
+  it('resourcegroup.updateGroup', function (done) {
     var data = {
       id: id,
-      computeResourceId: computeOfferingId,
-      templateResourceId: templateOfferingId,
-      securityResourceId: securityOfferingId,
+      computeResourceId: compute['local'],
+      templateResourceId: template['local'],
+      securityResourceId: securityZone['local'],
       name: newname,
     };
    c3Sdk.updateGroup(data, function (err, result) {
@@ -49,7 +62,7 @@ describe('resourceGroup', function () {
   });
 
 
-  it('resourcegroup.deletegroup', function (done) {
+  it('resourcegroup.destroyGroup', function (done) {
     var data = {
       id: id,
     };
@@ -60,7 +73,7 @@ describe('resourceGroup', function () {
    });
   });
  
-   it('resourcegroup.details', function (done) {
+   it('resourcegroup.groupDetails', function (done) {
     var data = {
       id: id,
     };
@@ -82,11 +95,11 @@ describe('resourceGroup', function () {
   });
 
 
-  it('resourcegroup.createserver', function (done) {
+  it('resourcegroup.createServer', function (done) {
     var data = {
       id: id,
     };
-   c3Sdk.createServer(data, function (err, result) {
+   c3Sdk.createServerGroup(data, function (err, result) {
    console.log('err: ', err);
    log.json(result);
    done();
@@ -94,11 +107,11 @@ describe('resourceGroup', function () {
   });
 
 
-  it('resourcegroup.deleteserver', function (done) {
+  it('resourcegroup.destroyServer', function (done) {
     var data = {
       id: id,
     };
-   c3Sdk.deleteServer(data, function (err, result) {
+   c3Sdk.deleteServerGroup(data, function (err, result) {
    console.log('err: ', err);
    log.json(result);
    done();

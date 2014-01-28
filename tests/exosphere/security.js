@@ -7,18 +7,14 @@ describe('security.exosphere', function() {
     this.timeout(1500000);
   
     var moduleId = '20';
-    var moduleName = 'NewModuleNameUPDATED'
+    var moduleName = 'NewModuleNameUPDATED';
 
-    it('security.cs.createRole', function(done) {
-        var data = {
-        };
-        c3Sdk.createRole(data, function(err, result) {
-          console.log('err: ', err);
-          console.log('result: ', result);
-          done();
-        });
-    });
+    var roleId = 7;
+    var roleName = 'TestRoleNew';
+    var cloudId = 1;
+    var permission = 4;
 
+    // Modules
     it('security.cs.createModule', function(done) {
         var data = {
           name: moduleName
@@ -63,12 +59,49 @@ describe('security.exosphere', function() {
         });
     });
 
+    // Roles
+    it('security.cs.createRole', function(done) {
+        var data = {
+          name: roleName,
+          cloudId: cloudId
+        };
+        c3Sdk.createRole(data, function(err, result) {
+          console.log('err: ', err);
+          console.log('result: ', result);
+          done();
+        });
+    });
+
+    it('security.cs.addModuleToRole', function(done) {
+        var data = {
+          roleId: roleId,
+          moduleId: moduleId,
+          modulePermission: permission
+        };
+        c3Sdk.addModuleToRole(data, function(err, result) {
+          console.log('err: ', err);
+          console.log('result: ', result);
+          done();
+        });
+    });
+
+    it('security.cs.removeModuleFromRole', function(done) {
+        var data = {
+          roleId: roleId,
+          moduleId: moduleId
+        };
+        c3Sdk.removeModuleFromRole(data, function(err, result) {
+          console.log('err: ', err);
+          console.log('result: ', result);
+          done();
+        });
+    });
+
     it('security.cs.listRoles', function(done) {
         var data = {
         };
         c3Sdk.listRoles(data, function(err, result) {
           console.log('err: ', err);
-          console.log('result: ', result);
           log.json(result);
           done();
         });

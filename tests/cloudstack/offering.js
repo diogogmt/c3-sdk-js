@@ -11,7 +11,7 @@ describe('server.cloudstack', function () {
   var state = 'Enabled';
   var supportedServices = 'Lb';
 
-  var type = 'template';
+  var type = 'TEMPLATE';
   it('offering.listOfferings', function (done) {
     var data = {
       siteId: 1,

@@ -2,28 +2,28 @@ var C3Sdk = require('../lib/c3');
 var request = require('request');
 
 
-// var url = 'http://cdos.dev.cloud'; // host/ip for c3 server
-// var port = 80; 
-var url = 'http://127.0.0.1'; // host/ip for c3 server
-var port = 8000; 
-var path = '/api/v2/cdos' // API resource path
-var endPoint = url + ':' + port + path;
+var profiles = {
+  local: {
+    endPoint: 'http://127.0.0.1:8000/api/v2/cdos',
+    username: 'testdev',
+    password: 'password',  
+    debug: true
+  },
+  dev: {
+    endPoint: 'http://cdos.dev.cloud/api/v2/cdos',
+    username: 'kam',
+    password: 'Xyz123!!',  
+    debug: true
+  },
 
-var username = 'testdev';
-var password = 'password';
-// var username = 'kam';
-// var password = 'Xyz123!!';
+}
 var userId = 11 // User to impersonate, defaults to authenticated user
 // Use existing tokenID
 var tokenId = 'VTzkJSGGeupTm2Eu3SQ6jjzv8RQg5f3dRLs69HGaFYUtaU_TIL46yfEVBTwRgeaC2j03OM4gLJMY3Xv8mUNuXA';
 
-var c3Sdkv2 = new C3Sdk({
-  endPoint: endPoint,
-  username: username,
-  password: password,
-  // userId: userId, // optinal
-  // tokenId: tokenId // optional
-});
+// userId: userId, // optinal
+// tokenId: tokenId // optional
+var c3Sdkv2 = new C3Sdk(profiles['dev']);
 
 var log = exports.log = {
   json: function (json) {
